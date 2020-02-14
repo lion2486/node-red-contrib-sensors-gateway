@@ -1,0 +1,111 @@
+[
+  {
+    "sensorID": "633F18FDC337DED7",
+    "deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
+    "name": "Sensor Box 1",
+    "type": "sensor_housing",
+    "state": 0,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9714,
+      "altitude": 17
+    },
+    "parent_deviceUUID": "root"
+  },
+  {
+    "sensorID": "633F18FDC337DED7",
+    "deviceUUID": "a7a9c0b7-4f6b-428d-8d89-31353fe6fc38",
+    "name": "Temperature Sensor 1",
+    "type": "temperature",
+    "unit": "celcius",
+    "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
+    "state": 0,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9714,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "t"
+  },
+  {
+    "sensorID": "633F18FDC337DED7",
+    "deviceUUID": "b83f4bdb-e665-432f-acc1-20ba0a8dd34a",
+    "name": "Humidity Sensor 1",
+    "type": "humidity",
+    "unit": "percent",
+    "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
+    "state": 0,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9714,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "h"
+  },
+  {
+    "sensorID": "633F18FDC337DED7",
+    "deviceUUID": "70c1825d-6271-4dc8-a56a-b78837f79bf1",
+    "name": "Pressure Sensor 1",
+    "type": "pressure",
+    "unit": "pascal",
+    "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
+    "state": 0,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9714,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "p"
+  },
+  {
+    "sensorID": "633F18FDC337DED7",
+    "deviceUUID": "b1d48946-fee2-4e5e-91ec-177d936b62ae",
+    "name": "Carbon Monoxide Sensor 1",
+    "type": "carbon_monoxide",
+    "unit": "ppm",
+    "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
+    "state": 0,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9714,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "co"
+  },
+  {
+    "sensorID": "633F18FDC337DED7",
+    "deviceUUID": "97ad249c-4cd1-4aa2-a5e0-cd0edf5f4ba7",
+    "name": "Carbon Dioxide Sensor 1",
+    "type": "carbon_dioxide",
+    "unit": "ppm",
+    "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
+    "state": 0,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9714,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "co2"
+  },
+  {
+    "sensorID": "633F18FDC337DED7",
+    "deviceUUID": "6e76a5bf-fcc8-4e08-8906-b16aa8c4c498",
+    "name": "Luminosity Sensor 1",
+    "type": "luminosity",
+    "unit": "lux",
+    "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
+    "state": 0,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9714,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "l"
+  }
+]

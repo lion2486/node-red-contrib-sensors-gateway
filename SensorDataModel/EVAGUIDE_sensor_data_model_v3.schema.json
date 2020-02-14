@@ -1,0 +1,105 @@
+{
+  "definitions": {}, 
+  "$schema": "http://json-schema.org/draft-07/schema#", 
+  "$id": "http://example.com/data-model.json", 
+  "type": "object", 
+  "title": "Sensor Observation message", 
+  "description": "Datamodel for sharing sensor's observation values.",
+  "required": [
+    "deviceUUID", 
+    "type", 
+    "value", 
+    "unit", 
+    "timestamp"
+  ], 
+  "properties": {
+    "deviceUUID": {
+      "$id": "#/properties/deviceUUID", 
+      "type": "string", 
+	  "format": "uuid",
+      "title": "The deviceUUID", 
+      "description": "", 
+      "examples": [
+        "af693783-f64f-449b-b4b1-42651af4e5de",
+		"5804f4fd-8f21-49e7-aaf9-04aa88f3b2c6",
+		"f8e8d69a-b7e0-4e1a-a41c-5783720d0c41"
+      ]
+    }, 
+    "type": {
+      "$id": "#/properties/type", 
+      "type": "string", 
+      "title": "The type of the sensor measurement", 
+      "description": "",
+	  "enum": [
+		"temperature",
+		"humidity",
+		"pressure",
+		"carbon_monoxide",
+		"carbon_dioxide",
+		"luminosity",
+		"door_status",
+		"camera_counting_in",
+		"camera_counting_out"
+	  ],
+	  "examples": [
+		"temperature",
+		"humidity",
+		"pressure",
+		"carbon_monoxide",
+		"carbon_dioxide",
+		"luminosity",
+		"door_status",
+		"camera_counting_in",
+		"camera_counting_out"
+	  ]
+    }, 
+    "value": {
+      "$id": "#/properties/value", 
+      "type": "number", 
+      "title": "The measurement value", 
+      "description": "", 
+      "default": 0, 
+      "examples": [
+        1,
+		-12.5,
+		30,
+		80
+      ]
+    }, 
+    "unit": {
+      "$id": "#/properties/unit", 
+      "type": "string", 
+      "title": "The Name Schema", 
+      "description": "An explanation about the purpose of this instance.", 
+      "default": "", 
+	  "enum": [
+		"celcius",
+		"percent",
+		"pascal",
+		"ppm",
+		"lux",
+		"boolean",
+		"people"
+	  ],
+      "examples": [
+        "celcius",
+		"percent",
+		"pascal",
+		"ppm",
+		"lux",
+		"boolean",
+		"people"
+      ]
+    }, 
+    "timestamp": {
+      "$id": "#/properties/timestamp", 
+      "type": "string", 
+	  "format": "date-time",
+      "title": "The observation timestamp", 
+      "description": "", 
+      "examples": [
+        "2019-07-10T10:10:10.623Z"
+      ]
+    }
+  }
+}

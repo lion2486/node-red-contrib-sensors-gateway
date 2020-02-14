@@ -3,7 +3,8 @@
         category: 'function',
         color: '#a6bbcf',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+            configuration: {value: "[]"}
         },
         inputs:1,
         outputs:1,
@@ -19,8 +20,31 @@
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+    <div class="form-row">
+        <label for="node-input-configuration"><i class="icon-gear"></i> Configuration</label>
+        <button onclick="document.getElementById('node-input-configuration').value = JSON.stringify(JSON.parse(document.getElementById('node-input-configuration').value),  undefined, 4)">
+            Format Json
+        </button>
+        <textarea id="node-input-configuration" style="width: 100%;min-height: 400px;"
+                  placeholder="[{
+        'sensorID': '633F18FDC337DED7',
+        'deviceUUID': 'adfa18ad-05c2-4fdf-a6bf-41eb98064a6f',
+        'name': 'Sensor Box 1',
+        'type': 'sensor_housing',
+        'state': 0,
+        'location': {
+        'latitude': 40.6141,
+        'longitude': 22.9714,
+        'altitude': 17
+        }
+        },...]"
+        ></textarea>
+    </div>
 </script>
 
 <script type="text/html" data-help-name="sensors-parse">
-    <p>A simple node that converts the message payloads into all lower-case characters</p>
+    <p>
+        It is a parsing-mapping-transforming node for Sensor Json packages.
+        Please see the README file and the configuration.example.json file as long as the SensorDataModel JsonSchemas.
+    </p>
 </script>

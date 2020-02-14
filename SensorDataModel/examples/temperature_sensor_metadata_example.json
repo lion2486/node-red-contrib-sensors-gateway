@@ -1,0 +1,15 @@
+{
+    "deviceUUID": "f8e8d69a-b7e0-4e1a-a41c-5783720d0c41",
+	"name": "Temperature Sensor 1",
+    "type": "temperature",
+    "unit": "celcius",
+    "state": 0,
+	"location":{
+	  "latitude": 40.6141,
+	  "longitude": 22.9714,
+	  "altitude": 21.5 
+	},
+	"parent_deviceUUID": "af693783-f64f-449b-b4b1-42651af4e5de",
+	"observation_interval": 30,
+	"timestamp": "2020-01-08T10:10:10.623Z"
+}

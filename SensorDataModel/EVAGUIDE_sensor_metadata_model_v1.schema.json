@@ -1,0 +1,171 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/data-model.json",
+  "type": "object",
+  "title": "Sensor Metadata message",
+  "description": "Datamodel for sharing sensor's definition and metadata.",
+  "required": [
+    "deviceUUID",
+    "name",
+    "timestamp"
+  ],
+  "properties": {
+    "deviceUUID": {
+      "$id": "#/properties/deviceUUID",
+      "type": "string",
+      "format": "uuid",
+      "title": "The deviceUUID",
+      "description": "",
+      "examples": [
+        "af693783-f64f-449b-b4b1-42651af4e5de",
+        "5804f4fd-8f21-49e7-aaf9-04aa88f3b2c6",
+        "f8e8d69a-b7e0-4e1a-a41c-5783720d0c41"
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The name of the sensor",
+      "description": "A verbal name of the sensor",
+      "default": "Sensor",
+      "examples": [
+        "Sensor 1",
+        "Sensor 2"
+      ]
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "title": "The type of the sensor measurement",
+      "description": "",
+      "enum": [
+        "temperature",
+        "humidity",
+        "pressure",
+        "carbon_monoxide",
+        "carbon_dioxide",
+        "luminosity",
+        "door_status",
+        "camera_counting_in",
+        "camera_counting_out",
+        "sensor_housing"
+      ],
+      "examples": [
+        "temperature",
+        "humidity",
+        "pressure",
+        "carbon_monoxide",
+        "carbon_dioxide",
+        "luminosity",
+        "door_status",
+        "camera_counting_in",
+        "camera_counting_out",
+        "sensor_housing"
+      ]
+    },
+    "unit": {
+      "$id": "#/properties/unit",
+      "type": "string",
+      "title": "The unit of the observations",
+      "description": "The unit of the sensor observations.",
+      "default": "",
+      "enum": [
+        "celcius",
+        "percent",
+        "pascal",
+        "ppm",
+        "lux",
+        "boolean",
+        "people"
+      ],
+      "examples": [
+        "celcius",
+        "percent",
+        "pascal",
+        "ppm",
+        "lux",
+        "boolean",
+        "people"
+      ]
+    },
+    "state": {
+      "$id": "#/properties/state",
+      "type": "number",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "title": "The sensor's state",
+      "description": "The sensor's state. 0 = Ok [green], 1 = Warning [yellow], 2 = Critical[red], 3 = Unkwown[grey]",
+      "examples": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "location": {
+      "$id": "#/properties/location",
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "altitude": {
+          "type": "number"
+        }
+      },
+      "title": "The sensor's location",
+      "description": "The sensor's location.",
+      "examples": [
+        {
+          "latitude": 40.6141,
+          "longitude": 22.9714,
+          "altitude": 21.5
+        }
+      ]
+    },
+    "parent_deviceUUID": {
+      "$id": "#/properties/parent_deviceUUID",
+      "type": "string",
+      "format": "uuid",
+      "title": "The parent device UUID",
+      "description": "",
+      "examples": [
+        "af693783-f64f-449b-b4b1-42651af4e5de",
+        "5804f4fd-8f21-49e7-aaf9-04aa88f3b2c6",
+        "f8e8d69a-b7e0-4e1a-a41c-5783720d0c41"
+      ]
+    },
+    "observation_interval": {
+      "$id": "#/properties/observation_interval",
+      "type": "number",
+      "title": "Observation values interval (in seconds)",
+      "description": "Normal time interval between observation values.",
+      "examples": [
+        30,
+        600
+      ]
+    },
+    "timestamp": {
+      "$id": "#/properties/timestamp",
+      "type": "string",
+      "format": "date-time",
+      "title": "The observation timestamp",
+      "description": "",
+      "examples": [
+        "2019-07-10T10:10:10.623Z"
+      ]
+    }
+  }
+}

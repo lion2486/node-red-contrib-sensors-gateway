@@ -1,0 +1,7 @@
+{
+	"deviceUUID": "5804f4fd-8f21-49e7-aaf9-04aa88f3b2c6",
+	"type": "door_status",
+	"value": 0,
+	"unit": "boolean",
+	"timestamp": "2019-07-10T10:18:12.087Z"
+}
