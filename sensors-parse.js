@@ -24,34 +24,38 @@ module.exports = function (RED) {
 
             // For maximum backwards compatibility, check that send exists.
             // If this node is installed in Node-RED 0.x, it will need to fallback to using `node.send`
-            send = send || function () {
+            var send = send || function () {
                 node.send.apply(node, arguments)
             };
 
             var timestamp = Math.floor(Date.now() / 1000);
+            var timestampForJson = new Date();
 
             var sensors_metadata = configuration.filter(function (conf) {
                 return timestamp - (context.get('sensor-metadata-last-update-' + conf.deviceUUID) || 0) > METADATA_UPDATE_INTERVAL
             }).map(function (conf) {
                 return {
-                    deviceUUID: conf.deviceUUID,
-                    name: conf.name,
-                    type: conf.type,
-                    unit: conf.unit,
-                    state: conf.state,
-                    location: conf.location ? conf.location :
-                        (sensor_configuration.find(function (s) {
-                                return s.deviceUUID === conf.deviceUUID;
-                            }) ?
-                                sensor_configuration.find(function (s) {
+                    payload: {
+                        deviceUUID: conf.deviceUUID,
+                        name: conf.name,
+                        type: conf.type,
+                        unit: conf.unit,
+                        state: conf.state,
+                        location: conf.location ? conf.location :
+                            (sensor_configuration.find(function (s) {
                                     return s.deviceUUID === conf.deviceUUID;
-                                }).location
-                                : null
-                        ),
-                    parent_deviceUUID: conf.parent_deviceUUID,
-                    observation_interval: conf.observation_interval,
-                    timestamp: timestamp
-                };
+                                }) ?
+                                    sensor_configuration.find(function (s) {
+                                        return s.deviceUUID === conf.deviceUUID;
+                                    }).location
+                                    : null
+                            ),
+                        parent_deviceUUID: conf.parent_deviceUUID,
+                        observation_interval: conf.observation_interval,
+                        timestamp: timestampForJson
+                    },
+                    topic: conf.metadata_topic
+                }
             });
 
             /**
@@ -66,24 +70,27 @@ module.exports = function (RED) {
                 var value = msg.payload[field];
 
                 return {
-                    deviceUUID: sensor.deviceUUID,
-                    type: sensor.type,
-                    unit: sensor.unit,
-                    value: value,
-                    timestamp: timestamp
+                    payload: {
+                        deviceUUID: sensor.deviceUUID,
+                        type: sensor.type,
+                        unit: sensor.unit,
+                        value: value,
+                        timestamp: timestampForJson
+                    },
+                    topic: sensor.observation_topic
                 };
             });
 
-            msg.payload = [observations.concat(sensors_metadata)];
+            data = [observations.concat(sensors_metadata)];
 
-            send(msg, function (err) {
+            send(data, function (err) {
                 if (err) {
                     if (done) {
                         // Node-RED 1.0 compatible
                         done(err);
                     } else {
                         // Node-RED 0.x compatible
-                        node.error(err, msg);
+                        node.error(err, data);
                     }
                 }
             });

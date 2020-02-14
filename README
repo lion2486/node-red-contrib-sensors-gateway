@@ -1,1 +1,2 @@
 A NodeRed plugin to parse and split the sensors provided data and metadata.
+As a result is the metadata and the observation messages, packages with the corresponding topic provided in the configuration.

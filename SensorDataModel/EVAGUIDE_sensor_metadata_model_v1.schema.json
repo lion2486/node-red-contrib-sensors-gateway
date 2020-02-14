@@ -71,7 +71,7 @@
       "description": "The unit of the sensor observations.",
       "default": "",
       "enum": [
-        "celcius",
+        "celsius",
         "percent",
         "pascal",
         "ppm",
