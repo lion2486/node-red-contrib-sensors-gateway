@@ -4,10 +4,23 @@
     "deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
     "name": "Sensor Box 1",
     "type": "sensor_housing",
-    "state": 0,
+    "state": 1,
     "location": {
       "latitude": 40.6141,
       "longitude": 22.9714,
+      "altitude": 17
+    },
+    "parent_deviceUUID": "root"
+  },
+  {
+    "sensorID": "417FBC32C8913E99",
+    "deviceUUID": "4664b222-49b1-4625-bbca-e7a126f47079",
+    "name": "Sensor Box 2",
+    "type": "sensor_housing",
+    "state": 1,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9715,
       "altitude": 17
     },
     "parent_deviceUUID": "root"
@@ -19,7 +32,7 @@
     "type": "temperature",
     "unit": "celsius",
     "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
-    "state": 0,
+    "state": 1,
     "location": {
       "latitude": 40.6141,
       "longitude": 22.9714,
@@ -28,7 +41,8 @@
     "observation_interval": 120,
     "property_field": "t",
     "observation_topic": "evaguide.sensors.temperature",
-    "metadata_topic": "evaguide.sensors.sensorMetadata"
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
   },
   {
     "sensorID": "633F18FDC337DED7",
@@ -37,7 +51,7 @@
     "type": "humidity",
     "unit": "percent",
     "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
-    "state": 0,
+    "state": 1,
     "location": {
       "latitude": 40.6141,
       "longitude": 22.9714,
@@ -46,7 +60,8 @@
     "observation_interval": 120,
     "property_field": "h",
     "observation_topic": "evaguide.sensors.humidity",
-    "metadata_topic": "evaguide.sensors.sensorMetadata"
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
   },
   {
     "sensorID": "633F18FDC337DED7",
@@ -55,7 +70,7 @@
     "type": "pressure",
     "unit": "pascal",
     "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
-    "state": 0,
+    "state": 1,
     "location": {
       "latitude": 40.6141,
       "longitude": 22.9714,
@@ -64,7 +79,8 @@
     "observation_interval": 120,
     "property_field": "p",
     "observation_topic": "evaguide.sensors.pressure",
-    "metadata_topic": "evaguide.sensors.sensorMetadata"
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
   },
   {
     "sensorID": "633F18FDC337DED7",
@@ -73,7 +89,7 @@
     "type": "carbon_monoxide",
     "unit": "ppm",
     "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
-    "state": 0,
+    "state": 1,
     "location": {
       "latitude": 40.6141,
       "longitude": 22.9714,
@@ -82,7 +98,8 @@
     "observation_interval": 120,
     "property_field": "co",
     "observation_topic": "evaguide.sensors.carbonMonoxide",
-    "metadata_topic": "evaguide.sensors.sensorMetadata"
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
   },
   {
     "sensorID": "633F18FDC337DED7",
@@ -91,7 +108,7 @@
     "type": "carbon_dioxide",
     "unit": "ppm",
     "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
-    "state": 0,
+    "state": 1,
     "location": {
       "latitude": 40.6141,
       "longitude": 22.9714,
@@ -100,7 +117,8 @@
     "observation_interval": 120,
     "property_field": "co2",
     "observation_topic": "evaguide.sensors.carbonDioxide",
-    "metadata_topic": "evaguide.sensors.sensorMetadata"
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
   },
   {
     "sensorID": "633F18FDC337DED7",
@@ -109,7 +127,7 @@
     "type": "luminosity",
     "unit": "lux",
     "parent_deviceUUID": "adfa18ad-05c2-4fdf-a6bf-41eb98064a6f",
-    "state": 0,
+    "state": 1,
     "location": {
       "latitude": 40.6141,
       "longitude": 22.9714,
@@ -118,6 +136,102 @@
     "observation_interval": 120,
     "property_field": "l",
     "observation_topic": "evaguide.sensors.luminosity",
-    "metadata_topic": "evaguide.sensors.sensorMetadata"
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
+  },
+  {
+    "sensorID": "417FBC32C8913E99",
+    "deviceUUID": "8b91d0df-2b70-4cd5-82fd-834894197553",
+    "name": "Temperature Sensor 2",
+    "type": "temperature",
+    "unit": "celsius",
+    "parent_deviceUUID": "4664b222-49b1-4625-bbca-e7a126f47079",
+    "state": 1,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9715,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "t",
+    "observation_topic": "evaguide.sensors.temperature",
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
+  },
+  {
+    "sensorID": "417FBC32C8913E99",
+    "deviceUUID": "35ac0530-8228-4688-8047-171bfb89063a",
+    "name": "Humidity Sensor 2",
+    "type": "humidity",
+    "unit": "percent",
+    "parent_deviceUUID": "4664b222-49b1-4625-bbca-e7a126f47079",
+    "state": 1,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9715,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "h",
+    "observation_topic": "evaguide.sensors.humidity",
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
+  },
+  {
+    "sensorID": "417FBC32C8913E99",
+    "deviceUUID": "1ce2ef18-904d-4327-b336-02b2d6f30588",
+    "name": "Pressure Sensor 2",
+    "type": "pressure",
+    "unit": "pascal",
+    "parent_deviceUUID": "4664b222-49b1-4625-bbca-e7a126f47079",
+    "state": 1,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9715,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "p",
+    "observation_topic": "evaguide.sensors.pressure",
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
+  },
+  {
+    "sensorID": "417FBC32C8913E99",
+    "deviceUUID": "19d1df8c-f5f1-41db-8c17-a7b9242a7e29",
+    "name": "Carbon Monoxide Sensor 2",
+    "type": "carbon_monoxide",
+    "unit": "ppm",
+    "parent_deviceUUID": "4664b222-49b1-4625-bbca-e7a126f47079",
+    "state": 1,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9715,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "co",
+    "observation_topic": "evaguide.sensors.carbonMonoxide",
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
+  },
+  {
+    "sensorID": "417FBC32C8913E99",
+    "deviceUUID": "7d41235a-ba7f-493c-a41e-d992c27b8594",
+    "name": "Luminosity Sensor 2",
+    "type": "luminosity",
+    "unit": "lux",
+    "parent_deviceUUID": "4664b222-49b1-4625-bbca-e7a126f47079",
+    "state": 1,
+    "location": {
+      "latitude": 40.6141,
+      "longitude": 22.9715,
+      "altitude": 17
+    },
+    "observation_interval": 120,
+    "property_field": "l",
+    "observation_topic": "evaguide.sensors.luminosity",
+    "metadata_topic": "evaguide.sensors.sensorMetadata",
+    "value_cast": "float"
   }
 ]

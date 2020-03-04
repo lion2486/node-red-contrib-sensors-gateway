@@ -1,10 +1,7 @@
 {
-  "name": "node-red-contrib-sensors-gateway",
-  "version": "1.0.0",
+  "name": "@lion2486/node-red-contrib-sensors-gateway",
+  "version": "1.1.0",
   "description": "Node Red package in order to parse and forward sensors data.",
-  "scripts": {
-    "test": "mocha \"test/**/*_spec.js\""
-  },
   "node-red": {
     "nodes": {
       "sensors-parse": "sensors-parse.js"
@@ -17,8 +14,7 @@
   ],
   "author": "lion2486",
   "license": "ISC",
-  "devDependencies": {
-    "node-red": "^1.0.3",
-    "node-red-node-test-helper": "^0.2.3"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

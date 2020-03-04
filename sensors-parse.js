@@ -1,4 +1,16 @@
-const METADATA_UPDATE_INTERVAL = 15 * 60; // in seconds
+const METADATA_UPDATE_INTERVAL = 12 * 60 * 60; // in seconds
+
+var castValue = function(value_cast, value){
+        switch (value_cast) {
+            case 'int':
+                return parseInt(value);
+            case 'float':
+            case 'double':
+                return (parseFloat(value) - Math.floor(parseFloat(value)) > 0) ? parseFloat(value) : parseFloat(value) + 0.01; // Adding a static Float value to have always decimal digits
+            default:
+                return value;
+        }
+};
 
 module.exports = function (RED) {
     function SensorsParseNode(config) {
@@ -74,7 +86,7 @@ module.exports = function (RED) {
                         deviceUUID: sensor.deviceUUID,
                         type: sensor.type,
                         unit: sensor.unit,
-                        value: value,
+                        value: sensor.value_cast != null ? castValue(sensor.value_cast, value) : value,
                         timestamp: timestampForJson
                     },
                     topic: sensor.observation_topic
